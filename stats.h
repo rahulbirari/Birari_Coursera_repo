@@ -23,7 +23,7 @@
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
-void print_statistics(unsigned char,float,
+void print_statistics(float,float,
 		      unsigned char,unsigned char);
 /**
  * @brief 	Prints statistical data provided to it
@@ -50,7 +50,7 @@ void print_array(unsigned char*,unsigned int);
  */
 
 
-unsigned char  find_median(unsigned char*,unsigned int);
+float find_median(unsigned char*,unsigned int);
 /**
  * finds median of the given data
  *

@@ -39,36 +39,70 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here*/
-
+	print_array(test,SIZE);
+	print_statistics(find_median(test,SIZE),
+			 find_mean(test,SIZE),
+			 find_minimum(test,SIZE),
+			 find_maximum(test,SIZE));
 }
+
 
 /* Add other Implementation File Code Here */
 
-void print_statistics(unsigned char median,float mean,
+void print_statistics(float  median,float mean,
                       unsigned char minimum,unsigned char maximum){
-	// function_body
+	printf("Median\t:%g\n",(double)median);
+	printf("Mean\t:%g\n",(double)mean);
+	printf("Minimum\t:%d\n",minimum);
+	printf("Maximum\t:%d\n",maximum);
 }
 
 void print_array(unsigned char* array,unsigned int size){
-	// function_body
+printf("Printing elements of the array of size %d\n",size);
+for(int i=0;i<size;i++)
+	printf("Index :%d\t Value :%d\n",i,array[i]);
+printf("\nPrinting completed\n\n");
 }
 
-unsigned char  find_median(unsigned char* array,unsigned int size){
-	// function_body
+float find_median(unsigned char* array,unsigned int size){
+	unsigned char mid = size/2; 
+	array  = sort_array(array,size);
+	return (float)(array[mid-1] + array[mid])/2; 
 }
 
 float find_mean(unsigned char* array,unsigned int size){
-	// function_body
+	unsigned int sum=0;
+	for(int i=0;i<size;i++)
+		sum += array[i];
+	return (float)sum/size;  
 }
 
 unsigned char find_maximum(unsigned char* array,unsigned int size){
-	// function_body
+	unsigned char max=0;
+	for(int i=0;i<size;i++)
+		if(array[i]>max)
+			max = array[i];
+	return max;
 }
 
 unsigned char find_minimum(unsigned char* array,unsigned int size){
-	// function_body
+	unsigned char min=255;
+        for(int i=0;i<size;i++)
+                if(array[i]<min)
+                        min = array[i];
+        return min;
 }
 
 unsigned char* sort_array(unsigned char* array,unsigned int size){
-	// function_body
+	unsigned char temp=0;
+	for(int j=0;j<size-1;j++)
+	for(int i=0;i<size-1;i++)
+		if(array[i]<array[i+1]){
+			temp = array[i];
+			array[i] = array[i+1];
+			array[i+1] = temp;
+		}
+	printf("\nPrinting Sorted Array:\n");
+	print_array(array,size);
+	return array;
 }
