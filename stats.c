@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file 	stats.c 
+ * @brief 	File calculates statistical charecteristics on data
  *
- * <Add Extended Description Here>
+ * 		Assignment 1 Contains  all the function definitiions 
+ * 		related to the statistical characteristics calculat-
+ * 		ions on the given array of 40 elements in this case.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author 	Rahul Birari
+ * @date 	27 Decemeber 2017
  *
  */
 
@@ -36,8 +38,37 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  /* Statistics and Printing Functions Go Here*/
 
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(unsigned char median,float mean,
+                      unsigned char minimum,unsigned char maximum){
+	// function_body
+}
+
+void print_array(unsigned char* array,unsigned int size){
+	// function_body
+}
+
+unsigned char  find_median(unsigned char* array,unsigned int size){
+	// function_body
+}
+
+float find_mean(unsigned char* array,unsigned int size){
+	// function_body
+}
+
+unsigned char find_maximum(unsigned char* array,unsigned int size){
+	// function_body
+}
+
+unsigned char find_minimum(unsigned char* array,unsigned int size){
+	// function_body
+}
+
+unsigned char* sort_array(unsigned char* array,unsigned int size){
+	// function_body
+}
